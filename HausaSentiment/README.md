@@ -64,12 +64,16 @@ Fine-tuning (3 epochs, batch_size=8, learning_rate=2e-5)
     ↓
 Evaluation + Inference timing
 
+---
+
 ### 4. Evaluation Metrics
 Task performance: Accuracy, F1 (weighted), Precision, Recall
 
 Efficiency: Training time (seconds), Inference latency (ms/sample)
 
 Statistical significance: McNemar's test for accuracy difference
+
+---
 
 ### 5. Experiment Outputs
 
@@ -220,25 +224,13 @@ Performance % Improvement with improved Resource
                        mBERT/dBERT        40.0000  81.3825        455.6682      40.0000           -58.4880                -82.9860
 					 
                              mBERT         0.0000   0.0000          0.0000       0.0000            65.8221                 84.2019
-	  
+
+---
+
 ### 6. Visualisation Output
 hausa_sentiment_comparison.png – Bar chart comparing accuracy and latency
 
-Saved Model
-- models/logisticRegression.pkl
-- models/distilbert-base-multilingual-cased.pkl
-- models/bert-base-multilingual-cased.pkl
-
-How to Run
-1. Install dependencies
-bash
-pip install pandas numpy scikit-learn transformers datasets torch matplotlib seaborn
-2. Run the script
-bash
-python hausa_sentiment_analysis.py
-3. Or use Jupyter notebook
-bash
-jupyter notebook hausa_sentiment_analysis.ipynb
+---
 
 ### 7. INSIGHTS
 
@@ -306,6 +298,8 @@ DistilBERT: Degenerate predictions, especially in high CPU run, indicates optimi
 	- If accuracy is critical → mBERT (with GPU)
 	- Avoid DistilBERT unless properly optimized
 
+---
+
 ### 8. Connections to Distributionally Robust Optimization
 This experiment aligns strongly with distributional robustness considerations:
 - LR’s stability suggests low variance under distribution constraints
@@ -318,7 +312,9 @@ In a DRO framing:
 - mBERT corresponds to a high-capacity model sensitive to distributional shifts
 - DistilBERT exhibits instability under resource-induced perturbations
 
-### 8. Final Conclusion
+---
+
+### 9. Final Conclusion
 This experiment demonstrates a non-obvious but critical result:
 In low-resource NLP settings, efficiency–robustness trade-offs can outweigh marginal accuracy gains from deep models.
 - mBERT: best accuracy, worst efficiency
@@ -327,6 +323,21 @@ In low-resource NLP settings, efficiency–robustness trade-offs can outweigh ma
 
 Next Steps
 - Extend to efficiency analysis
+
+---
+
+How to Run
+1. Install dependencies
+bash
+pip install pandas numpy scikit-learn transformers datasets torch matplotlib seaborn
+2. Run the script
+bash
+python hausa_sentiment_analysis.py
+3. Or use Jupyter notebook
+bash
+jupyter notebook hausa_sentiment_analysis.ipynb
+
+---
 
 References
 HausaBERTa model: Kumshe/Hausa-sentiment-analysis
