@@ -51,17 +51,24 @@ performance and accuracy-efficiency trade-offs.
 
 ### 2. Classical Model Pipeline
 TF-IDF Vectorizer (max_features=5000, ngram_range=(1,2))
+
     ↓
+	
 Logistic Regression (C=1.0, max_iter=1000)
+
     ↓
+	
 Predictions + Evaluation
 
 ### 3. Transformer Model Pipeline
-python
 Tokenizer (dBERT/mBERT)
+
     ↓
+	
 Fine-tuning (3 epochs, batch_size=8, learning_rate=2e-5)
+
     ↓
+	
 Evaluation + Inference timing
 
 ---
@@ -85,54 +92,47 @@ Statistical significance: McNemar's test for accuracy difference
 - Logical Cores: 4
 - Physical Cores: 4
 
-==================================================
-CLASSICAL MODEL: Logistic Regression + TF-IDF
-==================================================
+##### CLASSICAL MODEL: Logistic Regression + TF-IDF
 Performance Metrics:
-  Accuracy:  0.5583
-  F1 Score:  0.5484
-  Precision: 0.5563
-  Recall:    0.5583
+- Accuracy:  0.5583
+- F1 Score:  0.5484
+- Precision: 0.5563
+- Recall:    0.5583
 
- Efficiency:
-  Training time: 0.04 seconds
-  Inference latency: 1.56 ms/sample
-  
- Detailed Classification Report:
-              precision    recall  f1-score   support
+ Efficiency Metrics:
+- Training time: 0.04 seconds
+- Inference latency: 1.56 ms/sample
 
-    Negative       0.55      0.40      0.46        57
-    Positive       0.56      0.70      0.62        63
+Detailed Classification Report:
+  |           | precision   | recall |  f1-score |  support |
+  | ----------:| ----------:| ------ | ---------:|---------:|
+  |  Negative |      0.55   |   0.40  |    0.46  |      57  |
+  |  Positive |      0.56   |   0.70  |    0.62  |      63  |
+  |  accuracy  |            |         |    0.56  |     120  |
+  | macro avg  |     0.56   |   0.55  |    0.54  |     120  |
+| weighted avg |      0.56  |    0.56 |     0.55 |      120 |
 
-    accuracy                           0.56       120
-   macro avg       0.56      0.55      0.54       120
-weighted avg       0.56      0.56      0.55       120
-
-==================================================
-TRANSFORMER MODEL: dBERT
-==================================================
+##### TRANSFORMER MODEL: dBERT
 Final Performance Metrics:
-  Accuracy:  0.5000
-  F1 Score:  0.4269
-  Precision: 0.5242
-  Recall:    0.5000
+- Accuracy:  0.5000
+- F1 Score:  0.4269
+- Precision: 0.5242
+- Recall:    0.5000
 
 Efficiency:
-  Training time: 2379.65 seconds
-  Inference latency: 894.83 ms/sample 
+- Training time: 2379.65 seconds
+- Inference latency: 894.83 ms/sample 
   
-==================================================
-TRANSFORMER MODEL: mBERT
-==================================================
+##### TRANSFORMER MODEL: mBERT
 Final Performance Metrics:
-  Accuracy:  0.5781
-  F1 Score:  0.5716
-  Precision: 0.5887
-  Recall:    0.5781
+- Accuracy:  0.5781
+- F1 Score:  0.5716
+- Precision: 0.5887
+- Recall:    0.5781
 
 Efficiency:
-  Training time: 5041.04 seconds
-  Inference latency: 1892.36 ms/sample 
+- Training time: 5041.04 seconds
+- Inference latency: 1892.36 ms/sample 
 
 #### B. High Resource Environment
 - Using device: cpu
@@ -142,103 +142,89 @@ Efficiency:
 - Logical Cores: 12
 - Physical Cores: 6
 
-==================================================
-CLASSICAL MODEL: Logistic Regression + TF-IDF
-==================================================
+##### CLASSICAL MODEL: Logistic Regression + TF-IDF
  Performance Metrics:
-  Accuracy:  0.5583
-  F1 Score:  0.5484
-  Precision: 0.5563
-  Recall:    0.5583
+- Accuracy:  0.5583
+- F1 Score:  0.5484
+- Precision: 0.5563
+- Recall:    0.5583
 
  Efficiency:
-  Training time: 0.02 seconds
-  Inference latency: 0.25 ms/sample
+- Training time: 0.02 seconds
+- Inference latency: 0.25 ms/sample
 
  Detailed Classification Report:
-              precision    recall  f1-score   support
+  |           | precision   | recall |  f1-score |  support |
+  | ----------:| ----------:| ------ | ---------:|---------:|
+  |  Negative   |    0.55  |    0.40 |     0.46  |      57 |
+  |  Positive |      0.56  |    0.70 |     0.62  |      63 |
+   | accuracy  |            |        |     0.56  |     120 |
+  | macro avg  |     0.56   |   0.55  |    0.54  |     120 |
+| weighted avg  |     0.56  |    0.56  |    0.55  |     120 |
 
-    Negative       0.55      0.40      0.46        57
-    Positive       0.56      0.70      0.62        63
-
-    accuracy                           0.56       120
-   macro avg       0.56      0.55      0.54       120
-weighted avg       0.56      0.56      0.55       120
-
-==================================================
-TRANSFORMER MODEL: dBERT
-==================================================
+##### TRANSFORMER MODEL: dBERT
 Final Performance Metrics:
-  Accuracy:  0.4688
-  F1 Score:  0.3092
-  Precision: 0.2307
-  Recall:    0.4688
+- Accuracy:  0.4688
+- F1 Score:  0.3092
+- Precision: 0.2307
+- Recall:    0.4688
 
 Efficiency:
-  Training time: 618.14 seconds
-  Inference latency: 129.23 ms/sample 
+- Training time: 618.14 seconds
+- Inference latency: 129.23 ms/sample 
   
-==================================================
-TRANSFORMER MODEL: mBERT
-==================================================
+##### TRANSFORMER MODEL: mBERT
 Final Performance Metrics:
-  Accuracy:  0.5781
-  F1 Score:  0.5716
-  Precision: 0.5887
-  Recall:    0.5781
+- Accuracy:  0.5781
+- F1 Score:  0.5716
+- Precision: 0.5887
+- Recall:    0.5781
 
 Efficiency:
-  Training time: 1722.92 seconds
-  Inference latency: 298.96 ms/sample   
+- Training time: 1722.92 seconds
+- Inference latency: 298.96 ms/sample   
 
 #### C. SUMMARY COMPARISON
 <img width="4464" height="4599" alt="image" src="https://github.com/user-attachments/assets/fc9f423e-587e-461b-bbd4-0e91c50ff3dd" />
 
-============================================================
-Low Resource
-============================================================
-                             model  eval_accuracy  eval_f1  eval_precision  eval_recall  training time (s)  inference latency (ms)
-                LogisticRegression       0.558333 0.548367        0.556273     0.558333           0.071640                1.286664
-distilbert-base-multilingual-cased       0.500000 0.426910        0.524242     0.500000        2379.647193              894.830637
-      bert-base-multilingual-cased       0.578125 0.571558        0.588672     0.578125        5041.038840             1892.357860
+**Low Resource**
+
+|             model |  eval_accuracy | eval_f1 | eval_precision |  eval_recall |  training time (s) |  inference latency (ms) |
+| ------------------:| --------------:| -------:| --------------:| ------------:| ------------------:| -----------------------:|
+| LogisticRegression  |     0.558333 | 0.548367 |       0.556273  |   0.558333    |       0.071640      |          1.286664  |		   
+| distilbert-base-multilingual-cased |      0.500000 | 0.426910 |       0.524242  |   0.500000    |    2379.647193     |         894.830637 |
+|   bert-base-multilingual-cased  |     0.578125 | 0.571558  |      0.588672   |  0.578125    |    5041.038840   |          1892.357860  |
 
 <img width="4465" height="4599" alt="image" src="https://github.com/user-attachments/assets/bb8846ef-034c-4f94-8eb0-356f5f4489da" />
 
-============================================================
-High Resource
-============================================================
-                             model  eval_accuracy  eval_f1  eval_precision  eval_recall  training time (s)  inference latency (ms)
-                LogisticRegression       0.558333 0.548367        0.556273     0.558333           0.016037                0.251105
-distilbert-base-multilingual-cased       0.468750 0.309176        0.230655     0.468750         618.135245              129.232265
-      bert-base-multilingual-cased       0.578125 0.571558        0.588672     0.578125        1722.923225              298.955664
+**High Resource**
 
-============================================================
+|             model |  eval_accuracy | eval_f1 | eval_precision |  eval_recall |  training time (s) |  inference latency (ms) |
+| ------------------:| --------------:| -------:| --------------:| ------------:| ------------------:| -----------------------:|
+|  LogisticRegression   |    0.558333 | 0.548367  |      0.556273  |   0.558333   |        0.016037    |            0.251105 |
+| distilbert-base-multilingual-cased   |    0.468750 | 0.309176  |      0.230655  |   0.468750  |       618.135245    |          129.232265 |
+|  bert-base-multilingual-cased   |    0.578125 | 0.571558   |     0.588672  |   0.578125   |     1722.923225    |          298.955664  |
+
 Performance % Improvement with improved Resource
-============================================================
-                             model  eval_accuracy  eval_f1  eval_precision  eval_recall  training time (s)  inference latency (ms)
-                                LR         0.0000   0.0000          0.0000       0.0000            77.6145                 80.4840
-                          dBERT/LR       -53.5717 -96.9347       -916.5714     -53.5715            74.0240                 85.5650
-                          mBERT/LR         0.0000   0.0000          0.0000       0.0000            65.8220                 84.2040
-						
-					         dBERT        -6.2500 -27.5570        -56.0030       -6.667            74.0241                 85.6679
-                       mBERT/dBERT        40.0000  81.3825        455.6682      40.0000           -58.4880                -82.9860
-					 
-                             mBERT         0.0000   0.0000          0.0000       0.0000            65.8221                 84.2019
+
+|             model |  eval_accuracy | eval_f1 | eval_precision |  eval_recall |  training time (s) |  inference latency (ms) |
+| ------------------:| --------------:| -------:| --------------:| ------------:| ------------------:| -----------------------:|
+|        LR      |   0.0000  | 0.0000   |       0.0000  |     0.0000    |        77.6145     |            80.4840   |
+| dBERT      |  -6.2500 | -27.5570   |     -56.0030   |    -6.667    |        74.0241     |            85.6679  |
+| mBERT     |    0.0000  | 0.0000       |   0.0000   |    0.0000    |        65.8221  |                84.2019  |
+| dBERT/LR    |   -53.5717 | -96.9347   |    -916.5714  |   -53.5715    |         74.0240     |            85.5650  |
+| mBERT/LR   |      0.0000  |  0.0000    |      0.0000  |     0.0000     |       65.8220       |          84.2040   |
+| mBERT/dBERT     |   40.0000 | 81.3825   |     455.6682   |   40.0000     |      -58.4880   |             -82.9860   |
 
 ---
 
-### 6. Visualisation Output
-hausa_sentiment_comparison.png – Bar chart comparing accuracy and latency
-
----
-
-### 7. INSIGHTS
+### 6. INSIGHTS
 
 #### Predictive Performance: Marginal Gains from Deep Models
 Across both hardware settings, the ranking of models is consistent:
-•	mBERT → best overall performance
-•	Logistic Regression (LR) → close second
-•	DistilBERT → weakest performance (notably unstable)
+- mBERT → best overall performance
+- Logistic Regression (LR) → close second
+- DistilBERT → weakest performance (notably unstable)
 
 Key Observations
 - mBERT reflects balanced classification behavior implying that mBERT captures contextual semantics better, confirmed by the confusion matrix:
@@ -251,16 +237,17 @@ Key Observations
 
 #### Computational Cost: Orders of Magnitude Difference
 Transformer models are computationally expensive, even on improved CPUs.
-
-Hardware upgrade yields:
+- Hardware upgrade yields:
 	- Significant reduction for deep models
 	- No meaningful effect for LR
-Scaling behavior:	
+- Scaling behavior:	
 	- LR: O(n•d) efficient
 	- Transformers: O(n•L²•d) (sequence + attention overhead)
 
 #### Inference Latency: Deployment Bottleneck
-LR is ~1000× faster than mBERT. Even with better CPU:
+LR is ~1000× faster than mBERT. 
+
+Even with better CPU:
 - mBERT still ~300 ms/sample
 - DistilBERT ~129 ms/sample
 
@@ -284,9 +271,9 @@ LR is ~1000× faster than mBERT. Even with better CPU:
 Hardware affects efficiency, not statistical performance i.e. model quality is data + training regime dependent, not CPU-bound
 
 #### Confusion Matrix-Level Insights
-Logistic Regression: High FP and FN implies limited decision boundary flexibility
-mBERT: Lower FN impliies better class separation
-DistilBERT: Degenerate predictions, especially in high CPU run, indicates optimization failure or underfitting
+- Logistic Regression: High FP and FN implies limited decision boundary flexibility
+- mBERT: Lower FN impliies better class separation
+- DistilBERT: Degenerate predictions, especially in high CPU run, indicates optimization failure or underfitting
 
 #### Recommendations
 1. Classical models remain competitive for low-resource languages. Simpler models can match transformers when:
@@ -300,7 +287,7 @@ DistilBERT: Degenerate predictions, especially in high CPU run, indicates optimi
 
 ---
 
-### 8. Connections to Distributionally Robust Optimization
+### 7. Connections to Distributionally Robust Optimization
 This experiment aligns strongly with distributional robustness considerations:
 - LR’s stability suggests low variance under distribution constraints
 - mBERT improves mean performance but introduces:
@@ -314,7 +301,7 @@ In a DRO framing:
 
 ---
 
-### 9. Final Conclusion
+### 8. Final Conclusion
 This experiment demonstrates a non-obvious but critical result:
 In low-resource NLP settings, efficiency–robustness trade-offs can outweigh marginal accuracy gains from deep models.
 - mBERT: best accuracy, worst efficiency
