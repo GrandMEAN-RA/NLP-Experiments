@@ -7,7 +7,7 @@ low-resource languages (Hausa).
 **Goal:** Compare classical machine learning (Logistic Regression + TF-IDF) against a multilingual transformer (mBERT) and its
 light-weight version, DistilBERT, for Hausa sentiment classification under low-resource conditions.
 
-**Research Relevance:** Directly mirrors the sentiment analysis task in my proposed MSc/MPhil/PhD methodology, establishing baseline 
+**Research Relevance:** Directly mirrors the sentiment analysis task in my proposed research methodology, establishing baseline 
 performance and accuracy-efficiency trade-offs.
 
 ---
