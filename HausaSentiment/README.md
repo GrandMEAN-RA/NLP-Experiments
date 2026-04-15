@@ -188,6 +188,8 @@ Efficiency:
   Inference latency: 298.96 ms/sample   
 
 #### C. SUMMARY COMPARISON
+<img width="4464" height="4599" alt="image" src="https://github.com/user-attachments/assets/fc9f423e-587e-461b-bbd4-0e91c50ff3dd" />
+
 ============================================================
 Low Resource
 ============================================================
