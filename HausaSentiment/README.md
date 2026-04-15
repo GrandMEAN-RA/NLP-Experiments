@@ -198,6 +198,8 @@ Low Resource
 distilbert-base-multilingual-cased       0.500000 0.426910        0.524242     0.500000        2379.647193              894.830637
       bert-base-multilingual-cased       0.578125 0.571558        0.588672     0.578125        5041.038840             1892.357860
 
+<img width="4465" height="4599" alt="image" src="https://github.com/user-attachments/assets/bb8846ef-034c-4f94-8eb0-356f5f4489da" />
+
 ============================================================
 High Resource
 ============================================================
