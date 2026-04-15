@@ -1,0 +1,11 @@
+Low CPU Configuration,,,,,,
+model,eval_accuracy,eval_f1,eval_precision,eval_recall,training time (s),inference latency (ms)
+LogisticRegression,0.558333333,0.548366645,0.556272894,0.558333333,0.071640491,1.286664009
+distilbert-base-multilingual-cased,0.5,0.426910299,0.524242424,0.5,2379.647193,894.8306367
+bert-base-multilingual-cased,0.578125,0.571557635,0.588671875,0.578125,5041.03884,1892.35786
+,,,,,,
+High CPU Configuration,,,,,,
+model,eval_accuracy,eval_f1,eval_precision,eval_recall,training time (s),inference latency (ms)
+LogisticRegression,0.558333333,0.548366645,0.556272894,0.558333333,0.016037464,0.251104832
+distilbert-base-multilingual-cased,0.46875,0.309175532,0.230654762,0.46875,618.1352446,129.2322651
+bert-base-multilingual-cased,0.578125,0.571557635,0.588671875,0.578125,1722.923225,298.955664
