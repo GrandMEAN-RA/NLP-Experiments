@@ -1,4 +1,5 @@
-# Hausa Sentiment Analysis
+# Predictive Performance and Computational Efficiency of Classical and Transformer-Based Models for Low-Resource Language Sentiment Analysis: 
+# An Empirical Study of Hausa.
 
 This experiment provides a clean comparative study across three axes: predictive performance, computational cost (training), and deployment 
 efficiency (inference), under two distinct hardware regimes. The results are particularly informative for resource-constrained NLP in 
