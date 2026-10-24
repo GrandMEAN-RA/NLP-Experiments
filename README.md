@@ -11,7 +11,7 @@ The projects directly demonstrate:
 3. How consistently do different modelling approaches perform, and what computational costs accompany their predictive behaviour?
 4. How should practitioners choose between competing NLP models when accuracy, latency and computational resources impose different constraints?
 
-## ==================================================================================================================================================
+## =================================================
 
 ## EXPERIMENT 1:
 ### Predictive Performance and Computational Efficiency of Classical and Transformer-Based Models for Low-Resource Language Sentiment Analysis: 
